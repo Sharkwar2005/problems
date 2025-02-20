@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    long long integer,digit, Sum = 0;
+    cout << "Enter An Integer : ";
+    cin >> integer;
+    while (integer != 0)
+    {
+        digit = integer % 10;
+        Sum += digit;
+        integer = (integer - digit) / 10; 
+    }
+    cout << Sum ;
+    return 0;
+}
