@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    long long integer,integer2,temp, DCG;
+    cout << "Enter An Integer : ";
+    cin >> integer;
+    cout << "Enter Another Integer : ";
+    cin >> integer2;
+    if (integer < integer2)
+    {
+        temp = integer2;
+        integer2 = integer;
+        integer = temp;
+    }
+    
+    for (long long i = 1; i <= integer/2; i++)
+    {
+        if (integer % i == 0 && integer2 % 1 ==0)
+        {
+            DCG = i;
+        }
+    }
+    cout << DCG ;
+    
+    return 0;
+}
