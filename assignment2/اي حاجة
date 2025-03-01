@@ -1,0 +1,49 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+
+void Enter_arr(int arr[], int length);
+void Reverse(int arr[], int length);
+
+int main()
+{
+    int n;
+    printf("Enter Number of elements: ");
+    scanf("%d", &n);
+    int arr[n];
+    Enter_arr(arr, n);
+    Reverse(arr, n);
+    return 0;
+}
+void Enter_arr(int arr[], int length)
+{
+    printf("Enter %d elemnts: \n", length);
+    for (int i = 0; i < length; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+}
+void Reverse(int arr[], int length)
+{
+    int *start = &arr[0];
+    int *end = &arr[0] + length - 1;
+
+    for (int i = 0; i < length; i++)
+    {
+        if (start == end)
+        {
+            break;
+        }
+
+        int temp = *start;
+        *start = *end;
+        *end = temp;
+        start++;
+        end--;
+    }
+    printf("Reversed array is : ");
+    for (int i = 0; i < length; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+}
